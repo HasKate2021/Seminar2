@@ -5,21 +5,32 @@ Console.Clear();
 Console.WriteLine("Введите пятизначное число");
 int n = int.Parse(Console.ReadLine()!);
 
-int Rev (a, b, c, d, e )
+void Rev (int [] ar)
     {
         for (int i = 0; i < 5; i++)
         {
-            m = n(i) - 1 - i;
+            ar[i] = ar[5 - 1 - i];
+            Console.WriteLine($"{ar}");
+            if (i<5)
+            {
+                Console.WriteLine(", ");
+            }
         }
-    }
+     }
 
 if (n < 10000 || n > 99999)
 {
-    Console.WriteLine("Нужно пятизначное число");
+     Console.WriteLine("Число не подходит");
 }
 else
 {
-    int rev = Rev(n);
-    Console.WriteLine(n);
-}
-
+    int m=Rev(n);
+    if (n=m)
+    {
+        Console.WriteLine("Да");
+    }
+    else
+    {
+        Console.WriteLine("Нет");
+    }
+}    
