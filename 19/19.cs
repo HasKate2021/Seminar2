@@ -1,36 +1,33 @@
 ﻿// Напишите программу, которая принимает на вход пятизначное число 
 // и проверяет, является ли оно палиндромом.
+int Revers (int n1)
+{
+    int i = 0;
+    while (n1 > 0)
+    {
+        i=i*10;
+        i=i+n1%10;
+        n1=n1/10;
+     }
+     return i;
+ }
 
 Console.Clear();
-Console.WriteLine("Введите пятизначное число");
+Console.WriteLine("Введите пятизначное число: ");
 int n = int.Parse(Console.ReadLine()!);
 
-void Rev (int [] ar)
-    {
-        for (int i = 0; i < 5; i++)
-        {
-            ar[i] = ar[5 - 1 - i];
-            Console.WriteLine($"{ar}");
-            if (i<5)
-            {
-                Console.WriteLine(", ");
-            }
-        }
-     }
-
-if (n < 10000 || n > 99999)
+if (n > 10000 && n < 99999)
 {
-     Console.WriteLine("Число не подходит");
-}
-else
-{
-    int m=Rev(n);
-    if (n=m)
+    if (n==Revers(n))
     {
         Console.WriteLine("Да");
     }
     else
     {
         Console.WriteLine("Нет");
-    }
+    }    
+}    
+else
+{
+     Console.WriteLine("Число не подходит");
 }    
